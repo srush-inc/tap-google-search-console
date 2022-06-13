@@ -81,7 +81,7 @@ class GoogleSearchConsoleBaseTest(unittest.TestCase):
                 self.REPLICATION_METHOD: self.FULL_TABLE,
             },
             "performance_report_custom": {
-                self.PRIMARY_KEYS: {"site_url", "search_type", "date", "dimensions_hash_key"},
+                self.PRIMARY_KEYS: {"site_url", "search_type", "date", "country", "device", "page", "query"},
                 self.REPLICATION_METHOD: self.INCREMENTAL,
                 self.REPLICATION_KEYS: {"date"}
             },

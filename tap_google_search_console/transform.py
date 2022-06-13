@@ -66,10 +66,6 @@ def denest_key_fields(this_json, stream_name, path, dimensions_list):
             if isinstance(record[key], list):
                 if key == 'keys':
                     dim_num = 0
-                    # Add dimensions_hash_key for performance_report_custom
-                    if stream_name == 'performance_report_custom':
-                        dims_md5 = str(hash_data(json.dumps(record[key], sort_keys=True)))
-                        new_json[path][i]['dimensions_hash_key'] = dims_md5
                     for dimension in dimensions_list:
                         new_json[path][i][dimension] = record[key][dim_num]
                         dim_num = dim_num + 1
